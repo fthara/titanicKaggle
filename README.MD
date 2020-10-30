@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 align="center">Machine Learning para o problema do Titanic<h1>
 
 <figure>
@@ -4862,3 +4863,8 @@ tree_grid.best_score_
 ```python
 
 ```
+=======
+# Titanic Kaggle
+
+Este projeto tem como objetivo realizar um predição dos passageiros do titanic descobrindo quem sobreviveu e quem morreu durante o naufrágio do navio.
+>>>>>>> d8c1ed162ce8497be40d9bf64c60f124dffa51b8
