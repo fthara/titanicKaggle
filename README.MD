@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <h1 align="center">Machine Learning para o problema do Titanic<h1>
 
 <figure>
@@ -8,9 +7,9 @@
     </center>
 </figure>
 
-<p><font size="3.5"><b>Obejtivo:</b> Criar um modelo preditivo que descubra quem morreu e quem sobreviveu durante o naufrágio do Titanic</font><p>
+<b>Obejtivo:</b> Criar um modelo preditivo que descubra quem morreu e quem sobreviveu durante o naufrágio do Titanic
 
-<p><font size="3.5">Para começar a construir nosso modelo preditivo precisamos importat algumas bibliotecas do python que serão necessárias.</font><p>
+Para começar a construir nosso modelo preditivo precisamos importat algumas bibliotecas do python que serão necessárias.
 
 
 ```python
@@ -40,7 +39,7 @@ from sklearn.tree import DecisionTreeClassifier
 #from scipy.stats import uniform
 ```
 
-<p><font size="3.5">Agora vamos ler os dados de treino com a biblioteca do Pandas.</font><p>
+Agora vamos ler os dados de treino com a biblioteca do Pandas.
 
 
 ```python
@@ -167,7 +166,7 @@ dfTrain.head()
 
 
 
-<p><font size="3.5">Este é o nosso data frame. O significado em algumas colunas são bem óbvios, mas em outras nem tanto, portanto vou colocar a tabela do kagle com o significado de cada coluna do nosso dataframe</font><p>
+Este é o nosso data frame. O significado em algumas colunas são bem óbvios, mas em outras nem tanto, portanto vou colocar a tabela do kagle com o significado de cada coluna do nosso dataframe.
 
 <font size="5">
 <table border="1" width="100%">
@@ -233,7 +232,7 @@ dfTrain.head()
 </table>
 </font>
 
-<p><font size="3.5">Agora que sabemos o significado de cada coluna podemos começar nossa análise.</font><p>
+Agora que sabemos o significado de cada coluna podemos começar nossa análise.
 
 
 ```python
@@ -371,11 +370,11 @@ dfTrain.describe()
 
 
 
-<p><font size="3.5">No describe podemos ver alguns dados estatísticos relacionados às colunas do dataframe, lembrando que ele só funciona para variáveis numéricas. Aparentemente não consigo ver nenhum dado relevante através do decribe por enquanto.</font><p>
+No describe podemos ver alguns dados estatísticos relacionados às colunas do dataframe, lembrando que ele só funciona para variáveis numéricas. Aparentemente não consigo ver nenhum dado relevante através do decribe por enquanto.
 
-<p><font size="3.5">Quem lembra do filme do Titanic sabe que a prioridade para se salvar era de mulheres e crianças. Portanto já sabemos que as colunas "Sex" e "Age" serão importantes ao nosso dataframe, resta saber quais colunas também influenciarão em nosso modelo.</font><p>
+Quem lembra do filme do Titanic sabe que a prioridade para se salvar era de mulheres e crianças. Portanto já sabemos que as colunas "Sex" e "Age" serão importantes ao nosso dataframe, resta saber quais colunas também influenciarão em nosso modelo.
 
-<p><font size="3.5">Primeira coisa que gosto de fazer é verificar se existem valores nulos ou vazios no dataframe.</font><p>
+Primeira coisa que gosto de fazer é verificar se existem valores nulos ou vazios no dataframe.
 
 
 ```python
@@ -401,8 +400,8 @@ dfTrain.isnull().sum()
 
 
 
-<p><font size="3.5">Podemos ver que existem valores vazios em "Age", "Cabin" e "Embarked", como eu ja disse anteriormente, a coluna "Age" é de extrema importancia à nossa modelagem, já as colunas Cabin e Embarked ainda analizaremos sua importância. Para tratar esses valores nulos da coluna "Age" vou tomar como estratégia dar a média de idade a cada variável "Age" nula de acordo com do título dado a cada um deles.</font><p>
-<p><font size="3.5">Para isso vou criar uma nova coluna chamada "Title", que terá o título de cada passageiro dado no nome deles.</font><p>
+Podemos ver que existem valores vazios em "Age", "Cabin" e "Embarked", como eu ja disse anteriormente, a coluna "Age" é de extrema importancia à nossa modelagem, já as colunas Cabin e Embarked ainda analizaremos sua importância. Para tratar esses valores nulos da coluna "Age" vou tomar como estratégia dar a média de idade a cada variável "Age" nula de acordo com do título dado a cada um deles.
+Para isso vou criar uma nova coluna chamada "Title", que terá o título de cada passageiro dado no nome deles.
 
 
 ```python
@@ -670,7 +669,7 @@ dfTrain.head()
 
 
 
-<p><font size="3.5">Devemos tomar um pouco de cuidado nessa divisão, pois a função split feita na primeira parte dividiu o nome logo após a vírgula, portanto o título dos nomes está com um espaço na frente deles. Vamos tirar esses espaço para não termos problemas futuramente.</font><p>
+Devemos tomar um pouco de cuidado nessa divisão, pois a função split feita na primeira parte dividiu o nome logo após a vírgula, portanto o título dos nomes está com um espaço na frente deles. Vamos tirar esses espaço para não termos problemas futuramente.
 
 
 ```python
@@ -723,8 +722,8 @@ dfTrain.Age.isna().value_counts()
 
 
 
-<p><font size="3.5">Agora que as idades nulas de cada passageiro foi preenchida, podemos fazer as análises gráficas deste dataframe.</font><p>
-<p><font size="3.5">Vamos começar explorando a idade dos passageiros. Podemos fazer um gráfico que a faixa etária deles e quantos sobreviveram ou morreram por faixa etária. Para isso precisamos criar uma nova coluna em nosso dataframe chamada "AgeRange", que nos trará a faixa etária deles.</font><p>
+Agora que as idades nulas de cada passageiro foi preenchida, podemos fazer as análises gráficas deste dataframe.
+Vamos começar explorando a idade dos passageiros. Podemos fazer um gráfico que a faixa etária deles e quantos sobreviveram ou morreram por faixa etária. Para isso precisamos criar uma nova coluna em nosso dataframe chamada "AgeRange", que nos trará a faixa etária deles.
 
 
 ```python
@@ -884,8 +883,8 @@ plt.show()
 ![png](titanic_files/titanic_27_0.png)
 
 
-<p><font size="3.5">Podemos ver neste gráfico que quem tem menos de 10 anos teve uma chance maior de sobrevivencia. Já nas outras faixas etárias, apesar da chance de sobreviver ser menor, essa diferença não é tão grande quanto eu esperava ser. Acredito que o sexo deve influenciar de forma mais forte esse modelo.</font><p>
-<p><font size="3.5">Para tentar entender melhor, vamos quebrar esse gráfico por faixa etária, contando pelo sexo de cada pessageiro.</font><p>
+Podemos ver neste gráfico que quem tem menos de 10 anos teve uma chance maior de sobrevivencia. Já nas outras faixas etárias, apesar da chance de sobreviver ser menor, essa diferença não é tão grande quanto eu esperava ser. Acredito que o sexo deve influenciar de forma mais forte esse modelo.
+Para tentar entender melhor, vamos quebrar esse gráfico por faixa etária, contando pelo sexo de cada pessageiro.
 
 ## Explorando a Relação de Sobreviventes e Mortos por Faixa Etária e Sexo.
 
@@ -931,9 +930,9 @@ plt.show()
 ![png](titanic_files/titanic_30_1.png)
 
 
-<p><font size="3.5">Agora sim podemos ter uma visão mais clara desses dados. Quem é mulher tem chance de sobrevivencia maior em qualquer faixa etária, não importando a idade, agora quem é homem, só tem mais chance de sobrevivencia quando tem menos de 10 anos, já nas outras faixas etárias, as chances são bem menores.</font><p>
-<p><font size="3.5">Portanto, com toda certeza o sexo é um fator importantissimo em nossa predição, como ja desconfiávamos antes, a idade também será um fator importante. Agora resta descobrir quais outros fatores vão influenciar em nosso modelo preidtivo.</font><p>
-<p><font size="3.5">Uma coluna que pode ser interessante é a "Pclass", pois, como sabemos do filme, as pessoas com menor poder aquisitivo, que acredito se encontrarem na 3ª classe ficaram presas no porão do navio, enquanto as com maior poder aquisitivo estavam desembarcando.</font><p>
+Agora sim podemos ter uma visão mais clara desses dados. Quem é mulher tem chance de sobrevivencia maior em qualquer faixa etária, não importando a idade, agora quem é homem, só tem mais chance de sobrevivencia quando tem menos de 10 anos, já nas outras faixas etárias, as chances são bem menores.
+Portanto, com toda certeza o sexo é um fator importantissimo em nossa predição, como ja desconfiávamos antes, a idade também será um fator importante. Agora resta descobrir quais outros fatores vão influenciar em nosso modelo preidtivo.
+Uma coluna que pode ser interessante é a "Pclass", pois, como sabemos do filme, as pessoas com menor poder aquisitivo, que acredito se encontrarem na 3ª classe ficaram presas no porão do navio, enquanto as com maior poder aquisitivo estavam desembarcando.
 
 ## Explorando a Relação de Sobreviventes e Mortos pela Classe.
 
@@ -953,8 +952,8 @@ plt.show()
 ![png](titanic_files/titanic_33_0.png)
 
 
-<p><font size="3.5">Como eu ja desconfiava, quem era da terceira classe teve poucas chances de sobrevivencia, já na segunda classe as chances são quase de 50% e n primeira a chance de sobrivencia é maior.</font><p>
-<p><font size="3.5">Agora que sabemos que o valor aquisitivo dos passageiros irá influenciar em nosso modelo preditvo podemos explorar também a taxa (Fare) paga por cada passageiro e ver se ela também nos tráz algum dado relevante.</font><p>
+Como eu ja desconfiava, quem era da terceira classe teve poucas chances de sobrevivencia, já na segunda classe as chances são quase de 50% e n primeira a chance de sobrivencia é maior.
+Agora que sabemos que o valor aquisitivo dos passageiros irá influenciar em nosso modelo preditvo podemos explorar também a taxa (Fare) paga por cada passageiro e ver se ela também nos tráz algum dado relevante.
 
 ## Explorando a Relação de Sobreviventes e Morotos pela Taxa (Fare) e a Idade.
 
@@ -974,7 +973,7 @@ plt.show()
 ![png](titanic_files/titanic_36_0.png)
 
 
-<p><font size="3.5">Como esses valores estão mal distribuídos (com dois valores muito altos) fica difícil analizar algo neste gráfico, vamos dividí-lo em duas parte, na primeira ficará quem pagou menos de 85 libras e na segunda quem pagou mais.</font><p>
+Como esses valores estão mal distribuídos (com dois valores muito altos) fica difícil analizar algo neste gráfico, vamos dividí-lo em duas parte, na primeira ficará quem pagou menos de 85 libras e na segunda quem pagou mais.
 
 
 ```python
@@ -998,8 +997,8 @@ plt.show()
 ![png](titanic_files/titanic_38_0.png)
 
 
-<p><font size="3.5">Agora podemos ter uma visão mais clara desses gráficos. Quem pagou mais caro, acima de 85 libras teve altas chances de sobrevivência, quem pagou entre 45 e 85 libras também teve boas chances de sobrevivência e esse percentual vai diminuindo a medida que o valor do ticket abaixa. Quem pagou menos de 17 libras por exemplo teve pouquissimas chances de sobrevivência.</font><p>
-<p><font size="3.5">Portanto podemos criar uma coluna FareRange que vai nos dar grupos de taxas pagas pelos passageiro, assim acredito que o modelo conseguirá fazer uma previsão melhor.</font><p>
+Agora podemos ter uma visão mais clara desses gráficos. Quem pagou mais caro, acima de 85 libras teve altas chances de sobrevivência, quem pagou entre 45 e 85 libras também teve boas chances de sobrevivência e esse percentual vai diminuindo a medida que o valor do ticket abaixa. Quem pagou menos de 17 libras por exemplo teve pouquissimas chances de sobrevivência.
+Portanto podemos criar uma coluna FareRange que vai nos dar grupos de taxas pagas pelos passageiro, assim acredito que o modelo conseguirá fazer uma previsão melhor.
 
 
 ```python
@@ -1144,11 +1143,11 @@ dfTrain.head()
 
 
 
-<p><font size="3.5">Potanto para nossa primeira previsão vamos considerar as colunas "Plcas", "Sex", "AgeRage" e "FareRange". Vamos aos algoritmos!!</font><p>
+Potanto para nossa primeira previsão vamos considerar as colunas "Plcas", "Sex", "AgeRage" e "FareRange". Vamos aos algoritmos!!
 
 # Algorítmos para o 1º Modelo Preditivo
 
-<p><font size="3.5">Antes de começar a gerar os algoritmo vamos criar o X e y de treino com as colunas do dataframe que usaremos em nossos modelos.</font><p>
+Antes de começar a gerar os algoritmo vamos criar o X e y de treino com as colunas do dataframe que usaremos em nossos modelos.
 
 
 ```python
@@ -1163,7 +1162,7 @@ y_train1 = dfTrain["Survived"]
 np.random.seed(0)
 ```
 
-<p><font size="3.5">Como as colunas do nosso dataframe são do tipo qualitativas, temos que transformá-las para que o algoritmo não interprete-as de forma errada. Para isso usamos a função OneHotEncoder, que transforma os valores da colunas em vetores, colocando um valor em cada índice dependendo do valor da variável.</font><p>
+Como as colunas do nosso dataframe são do tipo qualitativas, temos que transformá-las para que o algoritmo não interprete-as de forma errada. Para isso usamos a função OneHotEncoder, que transforma os valores da colunas em vetores, colocando um valor em cada índice dependendo do valor da variável.
 
 
 ```python
@@ -1386,7 +1385,7 @@ tree_grid.best_score_
 
 
 
-<p><font size="3.5">Apesar do tempo de execução altissimo, comparado aos outros programas, o Random Forest Classifier nos deu a melhor solução até o momento, portanto iremos utilizar ele em nossa primeira predição.</font><p>
+Apesar do tempo de execução altissimo, comparado aos outros programas, o Random Forest Classifier nos deu a melhor solução até o momento, portanto iremos utilizar ele em nossa primeira predição.
 
 # 1ª predição para o problema do Titanic.
 
@@ -1533,9 +1532,9 @@ dfTest.isna().sum()
 
 
 
-<p><font size="3.5">Existem 86 variáveis nulas em "Age" e 1 variável nula em "Fare", precisamos arrumar isso para o algoritmo possa rodar sem problemas.</font><p>
-<p><font size="3.5">Para solucionar este problema em "Age", vamos usar a mesma estratégia usada anteriormente, mantendo o padrão. Usaremos a mesma estratégia em Fare também, mas comparando com a média da classe de cada passageiro.</font><p>
-<p><font size="3.5">Vamos começar por age então:</font><p>
+Existem 86 variáveis nulas em "Age" e 1 variável nula em "Fare", precisamos arrumar isso para o algoritmo possa rodar sem problemas.
+Para solucionar este problema em "Age", vamos usar a mesma estratégia usada anteriormente, mantendo o padrão. Usaremos a mesma estratégia em Fare também, mas comparando com a média da classe de cada passageiro.
+Vamos começar por age então:
 
 
 ```python
@@ -1687,7 +1686,7 @@ dfTest.Age.isna().value_counts()
 
 
 
-<p><font size="3.5">Pronto, agora vamos fazer o mesmo procedimento com a coluna Fare.</font><p>
+Pronto, agora vamos fazer o mesmo procedimento com a coluna Fare.
 
 
 ```python
@@ -1716,7 +1715,7 @@ dfTest.Fare.isna().value_counts()
 
 
 
-<p><font size="3.5">Agora vamos criar a coluna AgeRange</font><p>
+Agora vamos criar a coluna AgeRange
 
 
 ```python
@@ -1850,7 +1849,7 @@ dfTest.head()
 
 
 
-<p><font size="3.5">Só falta criar a coluna FareRange para podermos gerar nossos dados preditivos.</font><p>
+Só falta criar a coluna FareRange para podermos gerar nossos dados preditivos.
 
 
 ```python
@@ -1989,7 +1988,7 @@ dfTest.head()
 
 
 
-<p><font size="3.5">Vamos criar o X de teste para fazermos a predição.</font><p>
+Vamos criar o X de teste para fazermos a predição.
 
 
 ```python
@@ -2102,11 +2101,15 @@ predict1.to_csv(r'dataSets/predict1.csv', header=True)
 !head -n5 dataSets/predict1.csv
 ```
 
-    head: predict1.csv: No such file or directory
+    PassengerId,0
+    892,0
+    893,0
+    894,0
+    895,0
 
 
-<p><font size="3.5">Nesta primeira previsão eu consegui 76% de score, o que não é tão ruim assim, mas acreditei que dava para melhorar, então fui analizar o meu dataframe para ver o que eu podia fazer</font><p>
-<p><font size="3.5">Vamos abrir novamente nosso dataset:</font><p>
+Nesta primeira previsão eu consegui 76% de score, o que não é tão ruim assim, mas acreditei que dava para melhorar, então fui analizar o meu dataframe para ver o que eu podia fazer.
+Vamos abrir novamente nosso dataset:
 
 
 ```python
@@ -2250,8 +2253,8 @@ dfTrain.head()
 
 # Segunda exploração dos dados
 
-<p><font size="3.5">Uma primeira tentativa que podemos fazer é uma análise com relação aos familiares. Para isso, precisamos somar as colunas SibSp e Parch, assim saberemos quantos familiáres de um certo passageiro estão a bordo.</font><p>
-<p><font size="3.5">Vamos criar a coluna FamilySize</font><p>
+Uma primeira tentativa que podemos fazer é uma análise com relação aos familiares. Para isso, precisamos somar as colunas SibSp e Parch, assim saberemos quantos familiáres de um certo passageiro estão a bordo.
+Vamos criar a coluna FamilySize:
 
 
 ```python
@@ -2402,7 +2405,7 @@ dfTrain.head()
 
 ## Análise de Familiares
 
-<p><font size="3.5">Vamos plotar o gráfico de sobreviventes pela quantidade de familiares e tentar encontrar alguma relação entre eles.</font><p>
+Vamos plotar o gráfico de sobreviventes pela quantidade de familiares e tentar encontrar alguma relação entre eles.
 
 
 ```python
@@ -2419,12 +2422,12 @@ plt.show()
 ![png](titanic_files/titanic_85_0.png)
 
 
-<p><font size="3.5">Podemos perceber que quem tem de 1 a 3 familiares teve uma chance maior de sobrevivência, já quem tem nenhum ou mais de 3 familiares não teve poucas chances e em alguns casos, nenhuma chance. Sinceramente, eu não esperava que a quantidade de familiares faria diferença em nosso modelo, mas aparentemente faz, por isso, vamos incluí-lo.</font><p>
-<p><font size="3.5">Outra análise que pode ser interessante é quanto ao título de cada passageiro, pois acredito que quem tinha um título de importancia, como Coronel, ou Doutor, teve mais chance do que quem não tinha um título muito importante.</font><p>
+Podemos perceber que quem tem de 1 a 3 familiares teve uma chance maior de sobrevivência, já quem tem nenhum ou mais de 3 familiares não teve poucas chances e em alguns casos, nenhuma chance. Sinceramente, eu não esperava que a quantidade de familiares faria diferença em nosso modelo, mas aparentemente faz, por isso, vamos incluí-lo.
+Outra análise que pode ser interessante é quanto ao título de cada passageiro, pois acredito que quem tinha um título de importancia, como Coronel, ou Doutor, teve mais chance do que quem não tinha um título muito importante.
 
 ## Análise por Título
 
-<p><font size="3.5">Vamos gerar o gráfico do Título da pessoa em relação ao número de sobreviventes e mortos.</font><p>
+Vamos gerar o gráfico do Título da pessoa em relação ao número de sobreviventes e mortos.
 
 
 ```python
@@ -2442,7 +2445,7 @@ plt.show()
 ![png](titanic_files/titanic_89_0.png)
 
 
-<p><font size="3.5">Este gráfico está com uma visualização péssima devido ao número de "Mr" ser muito grande com relação aos outros passageiros, vamos dividí-lo em duas partes para facilitar a visualização.</font><p>
+Este gráfico está com uma visualização péssima devido ao número de "Mr" ser muito grande com relação aos outros passageiros, vamos dividí-lo em duas partes para facilitar a visualização.
 
 
 ```python
@@ -2478,8 +2481,8 @@ plt.show()
 ![png](titanic_files/titanic_92_0.png)
 
 
-<p><font size="3.5">Realmente, o título parece fazer muita diferença, pois nele conseguimos separar em sua maioria as mulheres dos homens, crianças de adultos e ainda percebemos alguns títulos importantes, como "Col" e "Dr". Portanto a coluna Title também será acrescentada em nosso modelo preditivo.</font><p>
-<p><font size="3.5">Antes de gerar os algorítmos, vou juntar algumas categorias, pois existem poucos passageiros nelas e também para que não fique muito pesado para rodar o algoritmo. Se olharmos no segundo gráfico percebemos que os passageiros de título 'Don', 'Rev', 'Capt' e 'Jonkeer', todos morreram, então vou renomeá-los de "othersDead", já os passageiros de título 'Mme', 'Ms' e 'Lady', todos sobreviveram, então vou renomeá-los de "othesAlive" e os passageiros de título 'Col' e 'Major' tiveram 50% de chance de sobreviver, então vou renomeá-los de "others50perc"</font><p>
+Realmente, o título parece fazer muita diferença, pois nele conseguimos separar em sua maioria as mulheres dos homens, crianças de adultos e ainda percebemos alguns títulos importantes, como "Col" e "Dr". Portanto a coluna Title também será acrescentada em nosso modelo preditivo.
+Antes de gerar os algorítmos, vou juntar algumas categorias, pois existem poucos passageiros nelas e também para que não fique muito pesado para rodar o algoritmo. Se olharmos no segundo gráfico percebemos que os passageiros de título 'Don', 'Rev', 'Capt' e 'Jonkeer', todos morreram, então vou renomeá-los de "othersDead", já os passageiros de título 'Mme', 'Ms' e 'Lady', todos sobreviveram, então vou renomeá-los de "othesAlive" e os passageiros de título 'Col' e 'Major' tiveram 50% de chance de sobreviver, então vou renomeá-los de "others50perc"
 
 
 ```python
@@ -2745,11 +2748,11 @@ tree_grid.best_score_
 
 
 
-<p><font size="3.5">Desta vez o algoritmo árvore de decisão (decision tree classifier) foi o que teve melhor resulta. Comparando aos algoritmos anteriores, todos foram bem sucedido. Sinal de que a inclussão das novas variáveis fizerem um efeito positivo.</font><p>
+Desta vez o algoritmo árvore de decisão (decision tree classifier) foi o que teve melhor resulta. Comparando aos algoritmos anteriores, todos foram bem sucedido. Sinal de que a inclussão das novas variáveis fizerem um efeito positivo.
 
 # 2ª predição para o problema do Titanic.
 
-<p><font size="3.5">Para fazer a previsão no dataframe de teste, precisamos criar a coluna "FamilySize" e trocar os títulos, conforme foi feito no dataframe de treino.</font><p>
+Para fazer a previsão no dataframe de teste, precisamos criar a coluna "FamilySize" e trocar os títulos, conforme foi feito no dataframe de treino.
 
 
 ```python
@@ -2918,7 +2921,7 @@ dfTest.Title.value_counts(dropna=False)
 
 
 
-<p><font size="3.5">Notamos que neste dataframe existe um novo título, que é "Dona", como ele não existe no algorítimo de teste, precisamos incluí-lo em algum daqueles títulos criados. Como "Dona" representa uma mulher, vou adicioná-la como otherAlive, pois acredito que a probabilidade dela sobreviver seja alta.</font><p>
+Notamos que neste dataframe existe um novo título, que é "Dona", como ele não existe no algorítimo de teste, precisamos incluí-lo em algum daqueles títulos criados. Como "Dona" representa uma mulher, vou adicioná-la como otherAlive, pois acredito que a probabilidade dela sobreviver seja alta.
 
 
 ```python
@@ -3072,13 +3075,13 @@ predict2.to_csv(r'dataSets/predict2.csv', header=True)
     895,0
 
 
-<p><font size="3.5">Com esse novo modelo consegui obter 79,9% de acerto no kaggle. Uma boa margem de acerto, mas o meu obejtivo é bater os 80%, acredito que se eu adicionar a coluna Embarked, talvez eu consiga obter esse objetivo.</font><p>
+Com esse novo modelo consegui obter 79,9% de acerto no kaggle. Uma boa margem de acerto, mas o meu obejtivo é bater os 80%, acredito que se eu adicionar a coluna Embarked, talvez eu consiga obter esse objetivo.
 
 # Terceira exploração dos dados
 
 ## Analisando a coluna Embarked
 
-<p><font size="3.5">Como vimos la no começo, existem 2 valores nulos na coluna embarked. Vamos tratálos para que não tenhamo problemas durante a execução do algorítmo.</font><p>
+Como vimos la no começo, existem 2 valores nulos na coluna embarked. Vamos tratálos para que não tenhamo problemas durante a execução do algorítmo.
 
 
 ```python
@@ -3170,7 +3173,7 @@ dfTrain.loc[dfTrain['Embarked'].isna()==True]
 
 
 
-<p><font size="3.5">Vamos gerar o gráfico para ter uma ideia do que fazer com essas duas colunas, se ele vai ajudar na nossa predição ou não.</font><p>
+Vamos gerar o gráfico para ter uma ideia do que fazer com essas duas colunas, se ele vai ajudar na nossa predição ou não.
 
 
 ```python
@@ -3187,8 +3190,8 @@ plt.show()
 ![png](titanic_files/titanic_127_0.png)
 
 
-<p><font size="3.5">Podemos notar que quem embarcou em Southampton (S) teve aproximadamente 30% de chance de sobrevivencia, enquanto quem embarcou em Cherbourg (C) teve mais chance de sobreviver do que de morrer e quem embarcou em Queenstown (Q) teve mais chance de morrer do que de sobreviver.</font><p>
-<p><font size="3.5">Observando as características das duas passageiras acima, vemos que elas mulheres e que pagaram uma taxa de quase 85 libras, o que lhes da uma grande chance de sobrevivência. Devido a isso, decidi incluí-las no grupo que embarcou em Cherbourg (C).<p></font><p>
+Podemos notar que quem embarcou em Southampton (S) teve aproximadamente 30% de chance de sobrevivencia, enquanto quem embarcou em Cherbourg (C) teve mais chance de sobreviver do que de morrer e quem embarcou em Queenstown (Q) teve mais chance de morrer do que de sobreviver.
+Observando as características das duas passageiras acima, vemos que elas mulheres e que pagaram uma taxa de quase 85 libras, o que lhes da uma grande chance de sobrevivência. Devido a isso, decidi incluí-las no grupo que embarcou em Cherbourg (C).
 
 
 ```python
@@ -3219,7 +3222,7 @@ dfTrain.isnull().sum()
 
 
 
-<p><font size="3.5">Agora vamos treinar novamente esse dataframe com a nova coluna e ver se obteremos resultados melhores.</font><p>
+Agora vamos treinar novamente esse dataframe com a nova coluna e ver se obteremos resultados melhores.
 
 # Algorítmos para o 3º Modelo Preditivo
 
@@ -3459,7 +3462,7 @@ tree_grid.best_score_
 
 
 
-<p><font size="3.5">Nesta terceira tentativa não obtivemos nenhum resultado relevante, sinal de que a coluna Embarked não faz tanta diferença em nossa predição. Mas enquanto eu estava analizando as duas colunas de Embarked igual a NaN percebi que existem alguns tickets que são iguais. Vamos tentar tirar algum insight dessa coluna.</font><p>
+Nesta terceira tentativa não obtivemos nenhum resultado relevante, sinal de que a coluna Embarked não faz tanta diferença em nossa predição. Mas enquanto eu estava analizando as duas colunas de Embarked igual a NaN percebi que existem alguns tickets que são iguais. Vamos tentar tirar algum insight dessa coluna.
 
 
 ```python
@@ -3523,8 +3526,8 @@ dfTrain.Ticket.value_counts().head(50)
 
 
 
-<p><font size="3.5">Não são muitos, mas vamos analizar alguns desses dados com mais repetições.</font><p>
-<p><font size="3.5">Vamos analizar esses dados em uma cópia do dataframe original, para que mantenha sua integridade.</font><p>
+Não são muitos, mas vamos analizar alguns desses dados com mais repetições.
+Vamos analizar esses dados em uma cópia do dataframe original, para que mantenha sua integridade.
 
 
 ```python
@@ -4083,8 +4086,8 @@ dfTrain1.loc[dfTrain1.Ticket == '347082']
 
 
 
-<p><font size="3.5">Se olharmos para esses 3 datasets podemos ver que em dois deles, os tickets pertencem a mesma família e no segundo a um grupo de chineses. Nos datasets com os passageiros da mesma famíli todos morreram, mas isso ja tinhamos visto no gráfico de FamilySize.</font><p>
-<p><font size="3.5">Uma falha que eu cometi durante as análises, por falta de intepretação foi que a taxa "Fare" de um ticket é apenas uma. Então o certo seria dividir essa taxa pelo número de tickets iguais. Vamos fazer essa alterção e ver o se conseguimos uma divisão melhor e mais clara pela taxa (Fare)</font><p>
+Se olharmos para esses 3 datasets podemos ver que em dois deles, os tickets pertencem a mesma família e no segundo a um grupo de chineses. Nos datasets com os passageiros da mesma famíli todos morreram, mas isso ja tinhamos visto no gráfico de FamilySize.
+Uma falha que eu cometi durante as análises, por falta de intepretação foi que a taxa "Fare" de um ticket é apenas uma. Então o certo seria dividir essa taxa pelo número de tickets iguais. Vamos fazer essa alterção e ver o se conseguimos uma divisão melhor e mais clara pela taxa (Fare).
 
 
 ```python
@@ -4092,7 +4095,7 @@ dfTrain1.loc[dfTrain1.Ticket == '347082']
 numeroDeTickets = dict(dfTrain1.Ticket.value_counts())
 ```
 
-<p><font size="3.5">Vamos criar a coluna "NumTickets", que nos dará a quantidade de tickets iguais que ele possui.</font><p>
+Vamos criar a coluna "NumTickets", que nos dará a quantidade de tickets iguais que ele possui.
 
 
 ```python
@@ -4247,7 +4250,7 @@ dfTrain1.head()
 
 
 
-<p><font size="3.5">Vamos criar também a coluna "RealFare", que terá a taxa "Real" paga pelo passageiro.</font><p>
+Vamos criar também a coluna "RealFare", que terá a taxa "Real" paga pelo passageiro.
 
 
 ```python
@@ -4431,7 +4434,7 @@ dfTrain1.RealFare
 
 
 
-<p><font size="3.5">Vamos fazer novamente a análise de mortos e sobrevivente pelo número "real" pago ticket e com a idade de cada passageiro.</font><p>
+Vamos fazer novamente a análise de mortos e sobrevivente pelo número "real" pago ticket e com a idade de cada passageiro.
 
 
 ```python
@@ -4455,7 +4458,7 @@ plt.show()
 ![png](titanic_files/titanic_159_0.png)
 
 
-<p><font size="3.5">Vamos divir este gráfico em três partes:</font><p>
+Vamos divir este gráfico em três partes:
 
 
 ```python
@@ -4490,7 +4493,7 @@ plt.show()
 ![png](titanic_files/titanic_161_1.png)
 
 
-<p><font size="3.5">Acho que essa divisão ficou mais justa, vamos mudar os valores novamente na coluna FareRange e ver se nosso algoritmo nos da uma resposta melhor.</font><p>
+Acho que essa divisão ficou mais justa, vamos mudar os valores novamente na coluna FareRange e ver se nosso algoritmo nos da uma resposta melhor.
 
 
 ```python
@@ -4857,14 +4860,4 @@ tree_grid.best_score_
 
 
 
-<p><font size="3.5">Olhando para os resultados até agora, eles animadores. Não consigo ter nenhuma ideia a mais para fazer com esse dtaset, por isso, vou considerar minha ultima resposta como a final até o momento.</font><p>
-
-
-```python
-
-```
-=======
-# Titanic Kaggle
-
-Este projeto tem como objetivo realizar um predição dos passageiros do titanic descobrindo quem sobreviveu e quem morreu durante o naufrágio do navio.
->>>>>>> d8c1ed162ce8497be40d9bf64c60f124dffa51b8
+Olhando para os resultados até agora, eles são satisfatórios. Acredito que para minha primeira experiência com data science foi um ótimo exercício e fiquei bastante empolgado para os próximos desafios que virão pela frente.
