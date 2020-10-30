@@ -1,13 +1,9 @@
-<h1 align="center">Machine Learning para o problema do Titanic<h1>
+# Machine Learning para o problema do Titanic
 
-<figure>
-    <center>
-        <img src="https://github.com/fthara/titanicKaggle/blob/master/titanicImage.jpeg?raw=true" style="height:250px; width:500px" alt="Titanic">
-        <figcaption>Naufrágio do Titanic</figcaption>
-    </center>
-</figure>
 
-<b>Obejtivo:</b> Criar um modelo preditivo que descubra quem morreu e quem sobreviveu durante o naufrágio do Titanic
+<img src="https://github.com/fthara/titanicKaggle/blob/master/titanicImage.jpeg?raw=true" style="height:250px; width:500px" alt="Titanic">
+        
+Obejtivo: Criar um modelo preditivo que descubra quem morreu e quem sobreviveu durante o naufrágio do Titanic
 
 Para começar a construir nosso modelo preditivo precisamos importat algumas bibliotecas do python que serão necessárias.
 
