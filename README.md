@@ -1,7 +1,7 @@
 # Machine Learning para o problema do Titanic
 
 
-<img src="https://github.com/fthara/titanicKaggle/blob/master/titanicImage.jpeg?raw=true" style="height:250px; width:500px" alt="Titanic">
+<img src="https://github.com/fthara/titanicKaggle/blob/master/titanicImage.jpeg?raw=true">
         
 Obejtivo: Criar um modelo preditivo que descubra quem morreu e quem sobreviveu durante o naufrágio do Titanic
 
